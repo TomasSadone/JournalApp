@@ -12,7 +12,7 @@ import { collection, getDocs } from "@firebase/firestore"
 //     return notes
 // }
 
-export const loadNotes = async (uid) => {
+export const loadNotes = async uid => {
  
     const notesSnap = await getDocs(collection(db, `${ uid }/journal/notes`));
     const notes = [];
@@ -24,7 +24,7 @@ export const loadNotes = async (uid) => {
         })
       });
  
-    console.log(notesSnap)
+    // console.log(notes)
 
     return notes;
 };
